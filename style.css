@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #5D5D5D;
+}
+a {
+    text-decoration: none;
+}
+.navbar {
+    background: #2A2A2A;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+}
+.menu-icon {
+    position: absolute;
+    top: 25px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+}
+.menu-icon:before {
+    content: '';
+    display: block;
+    margin: 1px auto;
+    background: #ADADAD;
+    width: 80%;
+    height: 7px;
+    border-radius: 10px;
+    box-shadow: 0px 10px #ADADAD, 0px 20px #ADADAD;
+}
+.logo a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: #ADADAD;
+}
+.menu, .menu ul, .menu li {
+    display: block;
+    list-style: none;
+}
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    background: #2A2A2A;
+    border-right: 1px solid #393939;
+    border-bottom: 1px solid #393939;
+    transform: translateX(-300px);
+}
+.menu-active menu {
+    transform: translateX(0);
+}
+.menu-active header {
+    transform: translateX(300px);
+}
+menu, header {
+    transition: transform .3s;
+}
+.menu a {
+    display: block;
+    color: #ADADAD;
+}
+.menu a:hover {
+    background: #181818;
+}
