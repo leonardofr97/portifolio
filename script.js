@@ -1,13 +1,16 @@
 window.onload = function() {
-    document.getElementById("menu-icon").addEventListener("click", function(e) {
-        e.preventDefault();
-        setaClasse();
-    });
+    var menuicon = document.getElementsByClassName("menu-icon");
+    for(var i = 0; i < menuicon.length; i++){
+        menuicon[i].addEventListener("click", function(e) {
+            e.preventDefault();
+            setaClasse();
+        });
+    };
 
     function setaClasse() {
-        var menu = document.getElementById("menu");
-        var header = document.getElementById("header");
-        menu.classList.toggle("menu-active");
-        header.classList.toggle("menu-active");
+        var menu = document.getElementsByClassName("menu");
+        for(var i = 0; i < menu.length; i++){
+            menu[i].classList.toggle("menu-active");
+        };
     }
 }

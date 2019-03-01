@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+html {
+    overflow-x: hidden;
+}
 body {
     font-family: 'Roboto', sans-serif;
     background: #5D5D5D;
@@ -44,21 +47,19 @@ a {
 }
 .menu {
     position: fixed;
-    top: 0;
+    top: 80px;
     left: 0;
     width: 300px;
     background: #2A2A2A;
+    border-top: 1px solid #393939;
     border-right: 1px solid #393939;
     border-bottom: 1px solid #393939;
     transform: translateX(-300px);
 }
-.menu-active menu {
+.menu-active {
     transform: translateX(0);
 }
-.menu-active header {
-    transform: translateX(300px);
-}
-menu, header {
+menu {
     transition: transform .3s;
 }
 .menu a {
@@ -67,4 +68,42 @@ menu, header {
 }
 .menu a:hover {
     background: #181818;
+}
+@media (max-width: 576px) {
+    .logo a {
+        font-size: 0.7em;
+    }
+    .menu-icon {
+        left: 20px;
+        width: 35px;
+        height: 35px;
+    }
+}
+@media (max-width: 768px) {
+    .logo a {
+        font-size: 0.8em;
+    }
+    .menu-icon {
+        left: 25px;
+        width: 40px;
+        height: 40px;
+    }
+}
+@media (min-width: 992px) {
+    .menu-icon {
+        display: none;
+    }
+    .menu {
+        position: relative;
+        top: 0px;
+        transform: translateX(0px);
+        width: 100%;
+        line-height: 40px;
+    }
+    .menu li {
+        display: inline-block;
+    }
+    .menu a {
+        padding: 0px 50px;
+    }
 }
