@@ -69,17 +69,37 @@ menu {
 .menu a:hover {
     background: #181818;
 }
+.container {
+    width: 80%;
+    margin: 100px auto 0px auto;
+    background: #2A2A2A;
+    color: #ADADAD;
+    padding: 15px;
+}
+.row {
+    display: flex;
+}
+.col {
+    padding: 15px;
+}
+img.profile {
+    width: 150px;
+    height: 186px;
+}
 @media (max-width: 576px) {
     .logo a {
-        font-size: 0.7em;
+        font-size: 0.6em;
     }
     .menu-icon {
-        left: 20px;
-        width: 35px;
-        height: 35px;
+        left: 15px;
+        width: 30px;
+        height: 30px;
+    }
+    .menu-icon:before {
+        height: 4px;
     }
 }
-@media (max-width: 768px) {
+@media (min-width: 577px) and (max-width: 768px) {
     .logo a {
         font-size: 0.8em;
     }
