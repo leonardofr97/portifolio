@@ -190,6 +190,77 @@ figcaption {
     height: 55px; 
     z-index: 5
 }
+.formcontato {
+    flex-direction: column;
+    width: 400px;
+}
+.formcontato input {
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-bottom: 3px solid #5D5D5D;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #ADADAD;
+	background-color: rgba(255, 255, 255, 0.0);
+}
+.formcontato ::-webkit-input-placeholder  {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(173, 173, 173, 0.5);
+}
+.formcontato input:-moz-placeholder {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(173, 173, 173, 0.5);
+}
+.formcontato input:focus {
+    outline: 0;
+}
+.formcontato textarea {
+    width: 300px;
+    height: 200px;
+    resize: vertical;
+    border: none;
+    border-bottom: 3px solid #5D5D5D;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #ADADAD;
+	background-color: rgba(255, 255, 255, 0.0);
+}
+.formcontato ::-webkit-textarea-placeholder  {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(173, 173, 173, 0.5);
+}
+.formcontato textarea:-moz-placeholder {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(173, 173, 173, 0.5);
+}
+.formcontato textarea:focus {
+    outline: 0;
+}
+.formcontato button {
+    background-color: #181818;
+	border: none;
+	color: #ADADAD;
+	padding: 16px 32px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+.formcontato button:focus {
+    outline: 0;
+}
+.boxcontato {
+    border-left: 6px solid #5D5D5D;
+    background-color: #181818;
+    padding: 10px;
+}
 @media (max-width: 576px) {
     .logo a {
         font-size: 0.6em;
