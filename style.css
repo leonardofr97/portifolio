@@ -18,19 +18,29 @@ a {
     text-align: center;
     line-height: 80px;
 }
+.caixa-icon {
+    background: #2A2A2A;
+    position: fixed;
+    top: 15px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    z-index: 6;
+}
 .menu-icon {
-    position: absolute;
+    position: fixed;
     top: 25px;
     left: 50px;
     width: 50px;
     height: 50px;
+    z-index: 6;
 }
 .menu-icon:before {
     content: '';
     display: block;
     margin: 1px auto;
     background: #ADADAD;
-    width: 80%;
+    width: 75%;
     height: 7px;
     border-radius: 10px;
     box-shadow: 0px 10px #ADADAD, 0px 20px #ADADAD;
@@ -55,6 +65,7 @@ a {
     border-right: 1px solid #393939;
     border-bottom: 1px solid #393939;
     transform: translateX(-300px);
+    z-index: 6;
 }
 .menu-active {
     transform: translateX(0);
@@ -188,14 +199,14 @@ figcaption {
     left: 0; 
     line-height: 55px; 
     height: 55px; 
-    z-index: 5
+    z-index: 5;
 }
 .formcontato {
     flex-direction: column;
     width: 400px;
 }
 .formcontato input {
-    width: 300px;
+    width: 100%;
     height: 50px;
     border: none;
     border-bottom: 3px solid #5D5D5D;
@@ -218,8 +229,8 @@ figcaption {
     outline: 0;
 }
 .formcontato textarea {
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    min-height: 200px;
     resize: vertical;
     border: none;
     border-bottom: 3px solid #5D5D5D;
@@ -265,6 +276,12 @@ figcaption {
     .logo a {
         font-size: 0.6em;
     }
+    .caixa-icon {
+        top: 17px;
+        left: 13px;
+        width: 35px;
+        height: 40px;
+    }
     .menu-icon {
         left: 15px;
         width: 30px;
@@ -273,19 +290,31 @@ figcaption {
     .menu-icon:before {
         height: 4px;
     }
+    .row.wrap {
+        flex-wrap: wrap;
+    }
+    figcaption {
+        font-size: 1em;
+    }
 }
 @media (min-width: 577px) and (max-width: 768px) {
     .logo a {
         font-size: 0.8em;
+    }
+    .caixa-icon {
+        left: 20px;
     }
     .menu-icon {
         left: 25px;
         width: 40px;
         height: 40px;
     }
+    .row.wrap {
+        flex-wrap: wrap;
+    }
 }
 @media (min-width: 992px) {
-    .menu-icon {
+    .menu-icon, .caixa-icon {
         display: none;
     }
     .menu {

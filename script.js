@@ -60,9 +60,9 @@ window.onload = function() {
                     elemento.classList.remove("ativo");
                 }else{
                     elemento.classList.remove("ativo");                     
-                    elemento = document.querySelector("a:last-child");
+                    elemento = document.querySelector("#slider a:last-child");
                     elemento.classList.add("ativo");
-                    this.legenda(elemento);
+                    settings.legenda(elemento);
                 }
                 intervalo = setInterval(settings.slide,4000);
             },
