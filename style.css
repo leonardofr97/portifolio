@@ -129,8 +129,8 @@ img.profile {
 figure span {
     background: #5D5D5D; 
     cursor: pointer; 
-    opacity: 0;
-    filter: alpha(opacity=0);
+    opacity: 0.76;
+    filter: alpha(opacity=76);
     position: absolute;
     bottom: 40%; 
     width: 43px; 
@@ -175,10 +175,6 @@ figure span {
     -webkit-transform: rotate(132deg);
     transform: rotate(132deg);
     top: 19px;
-}
-figure:hover span {
-    opacity: 0.76;
-    filter: alpha(opacity=76);
 }
 figure {
     max-width: 937px;
@@ -271,6 +267,13 @@ figcaption {
     border-left: 6px solid #5D5D5D;
     background-color: #181818;
     padding: 10px;
+}
+.footer {
+    background: #2A2A2A;
+    height: 55px;
+    margin-top: 50px;
+    /* text-align: center;
+    line-height: 80px; */
 }
 @media (max-width: 576px) {
     .logo a {

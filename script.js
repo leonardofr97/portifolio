@@ -1,75 +1,92 @@
-window.onload = function() {
+window.onload = function () {
     var menuicon = document.getElementsByClassName("menu-icon");
-    for(var i = 0; i < menuicon.length; i++){
-        menuicon[i].addEventListener("click", function(e) {
+    for (var i = 0; i < menuicon.length; i++) {
+        menuicon[i].addEventListener("click", function (e) {
             e.preventDefault();
+            setaClasse();
+        });
+    };
+
+    var clicado = document.getElementsByClassName("clicado");
+    for (var i = 0; i < clicado.length; i++) {
+        clicado[i].addEventListener("click", function () {
             setaClasse();
         });
     };
 
     function setaClasse() {
         var menu = document.getElementsByClassName("menu");
-        for(var i = 0; i < menu.length; i++){
+        for (var i = 0; i < menu.length; i++) {
             menu[i].classList.toggle("menu-active");
         };
     }
 
-    function setaImagem(){
+    $('.menu a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        var id = $(this).attr('href'),
+            targetOffset = $(id).offset().top;
+
+        $('html, body').animate({
+            scrollTop: targetOffset - 80
+        }, 700);
+    });
+
+    function setaImagem() {
 
         var settings = {
-            primeiraImg: function(){
-              elemento = document.querySelector("#slider a:first-child");
-              elemento.classList.add("ativo");
-              this.legenda(elemento);
+            primeiraImg: function () {
+                elemento = document.querySelector("#slider a:first-child");
+                elemento.classList.add("ativo");
+                this.legenda(elemento);
             },
-    
-            slide: function(){
+
+            slide: function () {
                 elemento = document.querySelector(".ativo");
-                if(elemento.nextElementSibling){
+                if (elemento.nextElementSibling) {
                     elemento.nextElementSibling.classList.add("ativo");
                     settings.legenda(elemento.nextElementSibling);
                     elemento.classList.remove("ativo");
-                }else{
+                } else {
                     elemento.classList.remove("ativo");
                     settings.primeiraImg();
                 }
             },
-    
-            proximo: function(){
+
+            proximo: function () {
                 clearInterval(intervalo);
                 elemento = document.querySelector(".ativo");
-            
-                if(elemento.nextElementSibling){
+
+                if (elemento.nextElementSibling) {
                     elemento.nextElementSibling.classList.add("ativo");
                     settings.legenda(elemento.nextElementSibling);
                     elemento.classList.remove("ativo");
-                }else{
+                } else {
                     elemento.classList.remove("ativo");
                     settings.primeiraImg();
                 }
-                intervalo = setInterval(settings.slide,4000);
+                intervalo = setInterval(settings.slide, 4000);
             },
-    
-            anterior: function(){
+
+            anterior: function () {
                 clearInterval(intervalo);
                 elemento = document.querySelector(".ativo");
-            
-                if(elemento.previousElementSibling){
+
+                if (elemento.previousElementSibling) {
                     elemento.previousElementSibling.classList.add("ativo");
                     settings.legenda(elemento.previousElementSibling);
                     elemento.classList.remove("ativo");
-                }else{
-                    elemento.classList.remove("ativo");                     
+                } else {
+                    elemento.classList.remove("ativo");
                     elemento = document.querySelector("#slider a:last-child");
                     elemento.classList.add("ativo");
                     settings.legenda(elemento);
                 }
-                intervalo = setInterval(settings.slide,4000);
+                intervalo = setInterval(settings.slide, 4000);
             },
-    
-            legenda: function(obj){
-              var legenda = obj.querySelector("img").getAttribute("alt");
-              document.querySelector("figcaption").innerHTML = legenda;
+
+            legenda: function (obj) {
+                var legenda = obj.querySelector("img").getAttribute("alt");
+                document.querySelector("figcaption").innerHTML = legenda;
             }
         }
 
@@ -80,10 +97,10 @@ window.onload = function() {
         settings.legenda(elemento);
 
         //chama o slide à um determinado tempo
-        var intervalo = setInterval(settings.slide,4000);
+        var intervalo = setInterval(settings.slide, 4000);
 
-        document.querySelector(".next").addEventListener("click",settings.proximo,false);
-        document.querySelector(".prev").addEventListener("click",settings.anterior,false);
+        document.querySelector(".next").addEventListener("click", settings.proximo, false);
+        document.querySelector(".prev").addEventListener("click", settings.anterior, false);
     }
 
     setaImagem();
