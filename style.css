@@ -15,6 +15,7 @@ a {
 .navbar {
     background: #2A2A2A;
     height: 80px;
+    margin-bottom: 100px;
     text-align: center;
     line-height: 80px;
 }
@@ -82,7 +83,7 @@ menu {
 }
 .container {
     width: 80%;
-    margin: 100px auto 0px auto;
+    margin: 0px auto 100px auto;
     background: #2A2A2A;
     color: #ADADAD;
     padding: 15px;
@@ -268,12 +269,54 @@ figcaption {
     background-color: #181818;
     padding: 10px;
 }
-.footer {
+.botao-topo {
+    /* display: none; */
+    position: fixed;
+    right: 30px;
+    bottom: 70px;
+    width: 50px; 
+    height: 50px;
     background: #2A2A2A;
+    cursor: pointer;
+}
+.botao-topo:before, .botao-topo:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    width: 5px;
+    height: 20px;
+    background: #ADADAD;
+}
+.botao-topo:before {
+    left: 17px;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.botao-topo:after {
+    right: 17px;
+    -webkit-transform: rotate(-48deg);
+    transform: rotate(-48deg);
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     height: 55px;
-    margin-top: 50px;
-    /* text-align: center;
-    line-height: 80px; */
+    background: #2A2A2A;
+    z-index: 6;
+}
+.social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+}
+.icone {
+    padding: 5px;
+}
+.icone img {
+    width: 40px;
+    height: 40px;
 }
 @media (max-width: 576px) {
     .logo a {
