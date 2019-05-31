@@ -21,7 +21,7 @@ window.onload = function () {
         };
     }
 
-    $('.menu a[href^="#"]').on('click', function (e) {
+    $('.menu a[href^="#"]').on('click', function(e) {
         e.preventDefault();
         var id = $(this).attr('href'),
             targetOffset = $(id).offset().top;
@@ -104,4 +104,19 @@ window.onload = function () {
     }
 
     setaImagem();
+
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 150) {
+            $('.botao-topo').fadeIn();
+        } else {
+            $('.botao-topo').fadeOut();
+        }
+    });
+
+    $('.botao-topo').click(function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 700);
+        // return false;
+    });
 }

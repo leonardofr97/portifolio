@@ -90,6 +90,7 @@ menu {
 }
 .row {
     display: flex;
+    flex-direction: row;
 }
 .col {
     padding: 15px;
@@ -199,8 +200,7 @@ figcaption {
     z-index: 5;
 }
 .formcontato {
-    flex-direction: column;
-    width: 400px;
+    width: 500px;
 }
 .formcontato input {
     width: 100%;
@@ -264,20 +264,14 @@ figcaption {
 .formcontato button:focus {
     outline: 0;
 }
+.align {
+    width: 500px;
+}
 .boxcontato {
+    width: 200px;
     border-left: 6px solid #5D5D5D;
     background-color: #181818;
     padding: 10px;
-}
-.botao-topo {
-    /* display: none; */
-    position: fixed;
-    right: 30px;
-    bottom: 70px;
-    width: 50px; 
-    height: 50px;
-    background: #2A2A2A;
-    cursor: pointer;
 }
 .botao-topo:before, .botao-topo:after {
     content: "";
@@ -298,6 +292,9 @@ figcaption {
     transform: rotate(-48deg);
 }
 .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -305,11 +302,16 @@ figcaption {
     background: #2A2A2A;
     z-index: 6;
 }
+.footer p {
+    display: none;
+    color: #ADADAD;
+    padding-top: 15px;
+    font-size: .8em;
+}
 .social-media {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* align-items: center; */
 }
 .icone {
     padding: 5px;
@@ -375,5 +377,17 @@ figcaption {
     }
     .menu a {
         padding: 0px 50px;
+    }
+    .botao-topo {
+        position: fixed;
+        right: 30px;
+        bottom: 70px;
+        width: 50px; 
+        height: 50px;
+        background: #2A2A2A;
+        cursor: pointer;
+    }
+    .footer p {
+        display: block;
     }
 }
